@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\me_ct\\OneDrive\\Masa\u00FCst\u00FC\\PROJELER\\Nihan H\u00FCsna K\u0131l\u0131\u00E7 Be\u015Fik Y245060024\\Kad\u0131nKuaforu\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B996CFA6-60C8-4EFA-83A7-785567B84057}|Kad\u0131nKuaforu\\Kad\u0131nKuaforu.csproj|c:\\users\\me_ct\\onedrive\\masa\u00FCst\u00FC\\projeler\\nihan h\u00FCsna k\u0131l\u0131\u00E7 be\u015Fik y245060024\\kad\u0131nkuaforu\\kad\u0131nkuaforu\\areas\\panel\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B996CFA6-60C8-4EFA-83A7-785567B84057}|Kad\u0131nKuaforu\\Kad\u0131nKuaforu.csproj|solutionrelative:kad\u0131nkuaforu\\areas\\panel\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B996CFA6-60C8-4EFA-83A7-785567B84057}|Kad\u0131nKuaforu\\Kad\u0131nKuaforu.csproj|c:\\users\\me_ct\\onedrive\\masa\u00FCst\u00FC\\projeler\\nihan h\u00FCsna k\u0131l\u0131\u00E7 be\u015Fik y245060024\\kad\u0131nkuaforu\\kad\u0131nkuaforu\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B996CFA6-60C8-4EFA-83A7-785567B84057}|Kad\u0131nKuaforu\\Kad\u0131nKuaforu.csproj|solutionrelative:kad\u0131nkuaforu\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "C:\\Users\\me_ct\\OneDrive\\Masa\u00FCst\u00FC\\PROJELER\\Nihan H\u00FCsna K\u0131l\u0131\u00E7 Be\u015Fik Y245060024\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Areas\\Panel\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "Kad\u0131nKuaforu\\Areas\\Panel\\Controllers\\CompanyController.cs",
+              "ToolTip": "C:\\Users\\me_ct\\OneDrive\\Masa\u00FCst\u00FC\\PROJELER\\Nihan H\u00FCsna K\u0131l\u0131\u00E7 Be\u015Fik Y245060024\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Areas\\Panel\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "Kad\u0131nKuaforu\\Areas\\Panel\\Controllers\\CompanyController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T15:00:13.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\me_ct\\OneDrive\\Masa\u00FCst\u00FC\\PROJELER\\Nihan H\u00FCsna K\u0131l\u0131\u00E7 Be\u015Fik Y245060024\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Kad\u0131nKuaforu\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\me_ct\\OneDrive\\Masa\u00FCst\u00FC\\PROJELER\\Nihan H\u00FCsna K\u0131l\u0131\u00E7 Be\u015Fik Y245060024\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Kad\u0131nKuaforu\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T14:59:59.258Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

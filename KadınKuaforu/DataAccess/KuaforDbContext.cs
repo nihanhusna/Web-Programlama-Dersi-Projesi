@@ -13,5 +13,6 @@ namespace KadınKuaforu.DataAccess
 
 
         }
+        public DbSet<Company> Companies { get; set; }
     }
 }

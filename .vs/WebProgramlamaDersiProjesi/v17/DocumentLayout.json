@@ -18,24 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Nihan\\source\\repos\\WebProgramlamaDersiProjesi\\Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
-              "RelativeDocumentMoniker": "Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
-              "ToolTip": "C:\\Users\\Nihan\\source\\repos\\WebProgramlamaDersiProjesi\\Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
-              "RelativeToolTip": "Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-16T20:07:02.591Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -47,7 +34,20 @@
               "RelativeToolTip": "Kad\u0131nKuaforu\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-16T20:06:51.501Z",
+              "WhenOpened": "2024-12-19T20:38:24.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nihan\\source\\repos\\WebProgramlamaDersiProjesi\\Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
+              "RelativeDocumentMoniker": "Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nihan\\source\\repos\\WebProgramlamaDersiProjesi\\Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
+              "RelativeToolTip": "Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-19T20:38:13.548Z",
               "EditorCaption": ""
             }
           ]

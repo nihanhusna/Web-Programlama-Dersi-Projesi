@@ -2,7 +2,7 @@
 
 namespace KadınKuaforu.Models
 {
-    public class Identity_Role : IdentityRole<string>
+    public class Identity_Role : IdentityRole
     {
     }
 }

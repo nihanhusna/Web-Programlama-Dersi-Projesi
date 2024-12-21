@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\Kad\u0131nKuaforu",
-    "\\Web-Programlama-Dersi-Projesi\\Kad\u0131nKuaforu"
+    "\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu",
+    "\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu",
+    "\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Controllers",
+    "\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Models",
+    "\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\obj",
+    "\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Views"
   ],
-  "SelectedNode": "\\Kad\u0131nKuaforu\\appsettings.json",
+  "SelectedNode": "\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Kad\u0131nKuaforu\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }

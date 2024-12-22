@@ -11,5 +11,7 @@ namespace KadınKuaforu.Models
         [Display(Name = "Hakkında")]
         [Required(ErrorMessage = "Hakkında girmelisiniz")]
         public string About { get; set; }
+        public Personnel Personnel { get; set; }
+
     }
 }

@@ -18,5 +18,11 @@ namespace KadınKuaforu.Models
         [Display(Name = "Şirket Email Adresi")]
         [EmailAddress(ErrorMessage ="Şirket Email Adresinizi doğru formatta giriniz")]
         public string EmailAddress { get; set; }
+        [Display(Name = "Açılış Saati")]
+        [Required(ErrorMessage = "Açılış saati giriniz")]
+        public TimeSpan OpenTime { get; set; }
+        [Display(Name = "Kapanış Saati")]
+        [Required(ErrorMessage = "Kapanış saati giriniz")]
+        public TimeSpan CloseTime { get; set; }
     }
 }

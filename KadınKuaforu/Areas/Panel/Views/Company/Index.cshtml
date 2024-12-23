@@ -1,0 +1,48 @@
+﻿@model Company
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Şirket Bilgileri</h3>
+<ul class="list-unstyled d-flex py-2 my-4" style="border-top:1px solid black; border-bottom:1px solid black;">
+    <li><a asp-area="Panel" asp-controller="Company" asp-action="Index" class="btn btn-outline-secondary">Bilgiler</a></li>
+    <li><a asp-area="Panel" asp-controller="Company" asp-action="Rank" class="btn btn-outline-secondary mx-3">Hizmetler</a></li>
+</ul>
+<form method="post" asp-area="Panel" asp-controller="Company" asp-action="Index">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Name" style="font-weight:600;"></label>
+        <input class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="bg-info"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" style="font-weight:600;"></label>
+        <input class="form-control" asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber" class="bg-info"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmailAddress" style="font-weight:600;"></label>
+        <input class="form-control" asp-for="EmailAddress" />
+        <span asp-validation-for="EmailAddress" class="bg-info"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="OpenTime" style="font-weight:600;"></label>
+        <input class="form-control" asp-for="OpenTime" />
+        <span asp-validation-for="OpenTime" class="bg-info"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="CloseTime" style="font-weight:600;"></label>
+        <input class="form-control" asp-for="CloseTime" />
+        <span asp-validation-for="CloseTime" class="bg-info"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Address" style="font-weight:600;"></label>
+        <textarea class="form-control" asp-for="Address" rows="4"></textarea>
+        <span asp-validation-for="Address" class="bg-info"></span>
+    </div>
+
+    <div>
+        <button class="btn btn-primary offset-4 px-5" type="submit">Kaydet</button>
+    </div>
+</form>

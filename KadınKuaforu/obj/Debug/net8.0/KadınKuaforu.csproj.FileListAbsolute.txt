@@ -266,3 +266,4 @@ C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\KadınKuaforu.pdb
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\KadınKuaforu.genruntimeconfig.cache
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\ref\KadınKuaforu.dll
+C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\scopedcss\Areas\Panel\Views\Shared\_Layout.cshtml.rz.scp.css

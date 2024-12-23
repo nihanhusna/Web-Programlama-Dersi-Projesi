@@ -24,7 +24,6 @@
   <ItemGroup>
     <Folder Include="Areas\Panel\Data\" />
     <Folder Include="Areas\Panel\Models\" />
-    <Folder Include="Areas\Panel\Views\" />
   </ItemGroup>
 
 </Project>

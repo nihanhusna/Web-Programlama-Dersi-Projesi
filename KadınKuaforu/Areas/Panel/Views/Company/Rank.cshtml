@@ -1,0 +1,150 @@
+﻿@model List<Rank>
+@{
+    ViewData["Title"] = "Rank";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Hizmetler</h3>
+<div>
+    <h5>Personel Yetkileri</h5>
+    @foreach (var role in Model)
+    {
+        <div class="row">
+            <div class="col">
+                @role.Name
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-info getPersonnels" data-rankid="@role.Id">Personeller</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-info getRankTasks" data-rankid="@role.Id">Görevler</button>
+            </div>
+        </div>
+    }
+</div>
+<div id="resultRank">
+
+</div>
+
+@section Scripts{
+    <script>
+        $(document).on('click', '.getPersonnels, .getRankTasks', function () {
+            let rankId = $(this).data('rankid');
+            let actionUrl = $(this).hasClass('getPersonnels')
+                ? '/Panel/Company/GetPersonnelsByRank?rank='
+                : '/Panel/Company/GetTasksByRank?rank=';
+            $('#resultRank').load(actionUrl + rankId);
+        });
+        $(document).on('click', '#addNewTask', function () {
+            // Form verilerini al
+            let rankId = $('#rankid').val();
+            let newTaskName = $('#newTaskName').val();
+
+            // Basit bir doğrulama
+            if (!newTaskName.trim()) {
+                alert('Görev adı boş bırakılamaz.');
+                return;
+            }
+
+            // AJAX isteği
+            $.ajax({
+                type: 'POST',
+                url: '/Panel/Company/AddNewTask', // Aksiyonun URL'sini kendi kontrolcünüzle değiştirin
+                data: { rankId: rankId, taskName: newTaskName },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Görev başarıyla eklendi!');
+                        $.ajax({
+                            type: 'GET',
+                            url: '/Panel/Company/GetTasksByRank',
+                            data: { rank: response.message },
+                            success: function (result) {
+                                $('#resultRank').html(result); // Gelen HTML sonucu resultRank div'ine yaz
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('Error: ', error); // Hata durumunda log yaz
+                            }
+                        });
+                    } else {
+                        alert('Görev eklenirken bir hata oluştu: ' + response.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Sunucu hatası: ' + error);
+                }
+            });
+
+        });
+
+        $(document).on('click', '.updateTaskBtn', function () {
+            // Butondan görev ID'sini al
+            let taskId = $(this).data('taskid');
+            // Görevin yeni adını al
+            let taskName = $(`#taskName-${taskId}`).val();
+        
+            // Basit doğrulama
+            if (!taskName.trim()) {
+                alert('Görev adı boş bırakılamaz.');
+                return;
+            }
+        
+            // AJAX isteği
+            $.ajax({
+                type: 'POST',
+                url: '/Panel/Company/UpdateRankTask', // Doğru aksiyon URL'sini yazın
+                data: { taskId: taskId, taskName: taskName },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Görev başarıyla güncellendi!');
+                        // İhtiyaç varsa başka işlemler yap
+                        $.ajax({
+                            type: 'GET',
+                            url: '/Panel/Company/GetTasksByRank',
+                            data: { rank: response.message },
+                            success: function (result) {
+                                $('#resultRank').html(result); // Gelen HTML sonucu resultRank div'ine yaz
+                            },
+                            error: function (xhr, status, error) {
+                                console.error('Error: ', error); // Hata durumunda log yaz
+                            }
+                        });
+                    } else {
+                        alert('Güncelleme başarısız: ' + response.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Sunucu hatası: ' + error);
+                }
+            });
+        });
+        $(document).on('click', '.deleteTaskBtn', function () {
+            // Butondan görev ID'sini al
+            let taskId = $(this).data('taskid');
+            let rowElement = $(this).closest('tr'); // İlgili satırı seç
+
+            // Kullanıcıdan onay al
+            if (!confirm('Bu görevi silmek istediğinizden emin misiniz?')) {
+                return;
+            }
+
+            // AJAX isteği
+            $.ajax({
+                type: 'POST',
+                url: '/Panel/Company/DeleteRankTask', // Doğru aksiyon URL'sini yazın
+                data: { taskId: taskId },
+                success: function (response) {
+                    if (response.success) {
+                        alert('Görev başarıyla silindi!');
+                        rowElement.remove(); // Satırı sayfadan kaldır
+                    } else {
+                        alert('Silme işlemi başarısız: ' + response.message);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert('Sunucu hatası: ' + error);
+                }
+            });
+        });
+
+    </script>
+}

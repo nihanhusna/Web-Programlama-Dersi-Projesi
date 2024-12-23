@@ -26,6 +26,34 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Nihan\Web-Programlama-Dersi-Projesi\KadınKuaforu
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/Company/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcQ29tcGFueVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/Company/Rank.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcQ29tcGFueVxSYW5rLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/Shared/Components/GetRankPersonnels/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0UmFua1BlcnNvbm5lbHNcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/Shared/Components/GetRanksTasks/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0UmFua3NUYXNrc1xEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -49,6 +77,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Areas/Panel/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-9qezbf97qp
 
 [C:/Users/Nihan/Web-Programlama-Dersi-Projesi/KadınKuaforu/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

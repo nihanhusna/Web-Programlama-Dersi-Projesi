@@ -10,6 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
+builder.Services.AddScoped<IExpertOfTaskRepository, ExpertOfTaskRepository>();
+builder.Services.AddScoped<IPersonnelRepository, PersonnelRepository>();
+builder.Services.AddScoped<IRankRepository, RankRepository>();
+builder.Services.AddScoped<IRankTaskRepository, RankTaskRepository>();
 
 builder.Services.AddDbContext<KuaforDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

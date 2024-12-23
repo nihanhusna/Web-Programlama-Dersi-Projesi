@@ -3,7 +3,7 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
-      "Route": "KadınKuaforu.a5w3xs93gu.styles.css",
+      "Route": "KadınKuaforu.545gvu78sv.styles.css",
       "AssetFile": "KadınKuaforu.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -17,7 +17,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1131"
+          "Value": "2274"
         },
         {
           "Name": "Content-Type",
@@ -25,21 +25,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fsYULTKiSk16RriBfp9KEouAopenrtjJCoreJzoDUP4=\""
+          "Value": "\"5aQ4nMJszucvTUsSSZ8uitLcsUqwzPLuxOVg4xXnF5Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:59:47 GMT"
+          "Value": "Mon, 23 Dec 2024 03:48:31 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "a5w3xs93gu"
+          "Value": "545gvu78sv"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fsYULTKiSk16RriBfp9KEouAopenrtjJCoreJzoDUP4="
+          "Value": "sha256-5aQ4nMJszucvTUsSSZ8uitLcsUqwzPLuxOVg4xXnF5Q="
         },
         {
           "Name": "label",
@@ -62,7 +62,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1131"
+          "Value": "2274"
         },
         {
           "Name": "Content-Type",
@@ -70,17 +70,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fsYULTKiSk16RriBfp9KEouAopenrtjJCoreJzoDUP4=\""
+          "Value": "\"5aQ4nMJszucvTUsSSZ8uitLcsUqwzPLuxOVg4xXnF5Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 16 Dec 2024 14:59:47 GMT"
+          "Value": "Mon, 23 Dec 2024 03:48:31 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fsYULTKiSk16RriBfp9KEouAopenrtjJCoreJzoDUP4="
+          "Value": "sha256-5aQ4nMJszucvTUsSSZ8uitLcsUqwzPLuxOVg4xXnF5Q="
         }
       ]
     },

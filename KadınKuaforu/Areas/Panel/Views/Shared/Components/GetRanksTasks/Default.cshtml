@@ -1,0 +1,27 @@
+﻿@model List<RankTask>
+
+<form>
+    <label style="font-weight:600;">Yeni Görev</label>
+    <input type="hidden" value="@ViewBag.Rankid" id="rankid" />
+    <input type="text" id="newTaskName" class="form-control" />
+    <button class="btn btn-success" type="button" id="addNewTask">Ekle</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Görev</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var task in Model){
+            <tr>
+                <td><input value="@task.Name" class="form-control" id="taskName-@task.Id" /></td>
+                <td>
+                    <button type="button" class="btn btn-primary updateTaskBtn" data-taskid="@task.Id">Güncelle</button>
+                    <button class="btn btn-danger deleteTaskBtn" data-taskid="@task.Id">Sil</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

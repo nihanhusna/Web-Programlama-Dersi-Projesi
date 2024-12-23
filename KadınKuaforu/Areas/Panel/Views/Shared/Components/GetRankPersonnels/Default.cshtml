@@ -1,0 +1,21 @@
+﻿@model List<Personnel>
+<table class="table">
+    <thead>
+        <tr>
+            <th>İsim-Soyisim</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var personnel in Model){
+            <tr>
+                <td>@personnel.Identity_User.NameSurname</td>
+                <td>@personnel.Identity_User.Email</td>
+                <td>@personnel.Identity_User.PhoneNumber</td>
+                <td><a class="btn btn-info" asp-area="Panel" asp-controller="Users" asp-action="User" asp-route-userid="@personnel.Identity_User.Id">Kullanıcıyı gör</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

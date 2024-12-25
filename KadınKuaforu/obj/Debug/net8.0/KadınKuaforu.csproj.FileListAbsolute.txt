@@ -247,6 +247,7 @@ C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\KadınKuaforu.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\KadınKuaforu.RazorAssemblyInfo.cache
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\KadınKuaforu.RazorAssemblyInfo.cs
+C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\scopedcss\Areas\Panel\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\scopedcss\bundle\KadınKuaforu.styles.css
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\scopedcss\projectbundle\KadınKuaforu.bundle.scp.css
@@ -266,4 +267,3 @@ C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\KadınKuaforu.pdb
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\KadınKuaforu.genruntimeconfig.cache
 C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\ref\KadınKuaforu.dll
-C:\Users\me_ct\OneDrive\Masaüstü\PROJELER\Nihan Hüsna Kılıç Beşik Y245060024\KadınKuaforu\KadınKuaforu\obj\Debug\net8.0\scopedcss\Areas\Panel\Views\Shared\_Layout.cshtml.rz.scp.css

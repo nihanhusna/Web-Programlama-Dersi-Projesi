@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Panel\Data\" />
-    <Folder Include="Areas\Panel\Models\" />
   </ItemGroup>
 
 </Project>

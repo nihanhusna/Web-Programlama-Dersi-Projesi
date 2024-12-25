@@ -28,6 +28,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Panel" asp-controller="Company" asp-action="Index">Panel</a>
                         </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Sign" asp-action="Out">Çıkış yap</a>
+                            </li>
+                        }else{
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Sign" asp-action="In">Giriş yap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Sign" asp-action="Up">Kayıt ol</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

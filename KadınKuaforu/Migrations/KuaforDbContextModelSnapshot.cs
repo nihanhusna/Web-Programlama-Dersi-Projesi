@@ -54,7 +54,7 @@ namespace KadınKuaforu.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Companies", (string)null);
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.ExpertOfTask", b =>
@@ -77,7 +77,7 @@ namespace KadınKuaforu.Migrations
 
                     b.HasIndex("RankTaskId");
 
-                    b.ToTable("ExpertOfTasks");
+                    b.ToTable("ExpertOfTasks", (string)null);
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.Identity_Role", b =>
@@ -202,7 +202,7 @@ namespace KadınKuaforu.Migrations
 
                     b.HasIndex("RankId");
 
-                    b.ToTable("Personnels");
+                    b.ToTable("Personnels", (string)null);
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.Rank", b =>
@@ -219,7 +219,7 @@ namespace KadınKuaforu.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Ranks");
+                    b.ToTable("Ranks", (string)null);
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.RankTask", b =>
@@ -241,7 +241,7 @@ namespace KadınKuaforu.Migrations
 
                     b.HasIndex("RankId");
 
-                    b.ToTable("RankTasks");
+                    b.ToTable("RankTasks", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -1,0 +1,36 @@
+﻿@using KadınKuaforu.Areas.Panel.Models
+@model List<EditPersonnelModel>
+@{
+    ViewData["Title"] = "User";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Personel Bilgileri</h1>
+
+<input type="hidden" value="@ViewBag.PersonnelId" />
+<input disabled value="@ViewBag.PersonnelName" />
+<input disabled value="@ViewBag.Email" />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Görev</th>
+            <th>Uzmanlık</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var info in Model)
+        {
+            <tr>
+                <td>@info.RankTaskName</td>
+                <td>
+                    @Html.Raw(info.IsExpert ? "<i>Var</i>" : "<i>Yok</i>")
+                </td>
+                <td>
+                    <a asp-area="Panel" asp-controller="Users" asp-action="ChangeExpert" asp-route-taskid="@info.RankTaskId" asp-route-personnelid="@info.PersonnelId">Uzmanlık @Html.Raw(info.IsExpert ? "<span>al</span>" : "<span>ver</span>") </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

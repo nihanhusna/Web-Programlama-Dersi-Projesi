@@ -1,5 +1,9 @@
 ﻿using KadınKuaforu.DataAccess;
+using KadınKuaforu.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace KadınKuaforu.Areas.Panel.ViewComponents.Company
 {

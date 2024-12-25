@@ -1,0 +1,39 @@
+﻿@model List<Identity_User>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+    var userRoleList = ViewBag.UserRoles as List<(string,string)>;
+}
+
+<h1>Kullanıcılar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>İsim Soyisim</th>
+            <th>Mail</th>
+            <th>Rol</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model){
+            <tr>
+                <td>@user.NameSurname</td>
+                <td>@user.Email</td>
+                <td>
+                    @foreach(var userRole in userRoleList){
+                        if(userRole.Item1==user.Email)
+                        {
+                            <b>@userRole.Item2</b>
+                        }
+                    }
+
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-area="Panel" asp-controller="Users" asp-action="Edit" asp-route-userId="@user.Id">Düzenle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

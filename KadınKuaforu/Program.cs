@@ -33,7 +33,7 @@ builder.Services.AddIdentity<Identity_User, Identity_Role>(opt =>
 
 builder.Services.ConfigureApplicationCookie(opt =>
 {
-    opt.Cookie.Name = "KadýnKuaforu";
+    opt.Cookie.Name = "KadinKuaforu";
     opt.ExpireTimeSpan = TimeSpan.FromDays(10); 
     opt.LoginPath = "/Sign/In"; // Giriþ
     opt.LogoutPath = "/Sign/Out"; // Çýkýþ 

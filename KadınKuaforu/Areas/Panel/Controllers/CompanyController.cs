@@ -2,7 +2,9 @@
 using KadınKuaforu.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace KadınKuaforu.Areas.Panel.Controllers
@@ -14,13 +16,15 @@ namespace KadınKuaforu.Areas.Panel.Controllers
         private readonly IRankRepository rankRepository;
         private readonly IRankTaskRepository _rankTaskRepository;
         private readonly RoleManager<Identity_Role> roleManager;
+        private readonly UserManager<Identity_User> userManager;
 
-        public CompanyController(ICompanyRepository companyRepository, RoleManager<Identity_Role> roleManager, IRankRepository rankRepository, IRankTaskRepository rankTaskRepository)
+        public CompanyController(ICompanyRepository companyRepository, RoleManager<Identity_Role> roleManager, IRankRepository rankRepository, IRankTaskRepository rankTaskRepository, UserManager<Identity_User> userManager)
         {
             _companyRepository = companyRepository;
             this.roleManager = roleManager;
             this.rankRepository = rankRepository;
             _rankTaskRepository = rankTaskRepository;
+            this.userManager = userManager;
         }
         [HttpGet]
         public IActionResult Index()
@@ -155,5 +159,30 @@ namespace KadınKuaforu.Areas.Panel.Controllers
                 return Json(new { success = false, message = ex.Message });
             }
         }
+        [HttpPost]
+        public async Task<IActionResult> AddNewPersonnel(string user, string role)
+        {
+
+            try
+            {
+                var currentUser = await userManager.FindByNameAsync(user);
+                var userRoles = await userManager.GetRolesAsync(currentUser);
+                await userManager.RemoveFromRolesAsync(currentUser, userRoles);
+                var result = await userManager.AddToRoleAsync(currentUser, role);
+                if (result.Succeeded)
+                {
+                    return Ok(new { success = true, message = "Kullanıcıya rol başarıyla eklendi." });
+                }
+                else
+                {
+                    return BadRequest(new { success = false, message = "Kullanıcıya rol eklenemedi.", errors = result.Errors });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, message = ex.Message });
+            }
+        }
+
     }
 }

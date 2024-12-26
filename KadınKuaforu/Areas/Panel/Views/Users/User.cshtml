@@ -4,13 +4,17 @@
     ViewData["Title"] = "User";
     Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
 }
-
+@if (TempData["ShiftMsg"]!=null){
+    <div class="d-block w-100 p-3 bg-info">
+        @TempData["ShiftMsg"]
+    </div>
+}
 <h1>Personel Bilgileri</h1>
 
 <input type="hidden" value="@ViewBag.PersonnelId" />
 <input disabled value="@ViewBag.PersonnelName" />
 <input disabled value="@ViewBag.Email" />
-
+@await Component.InvokeAsync("PersonnelShift", new { personnelid = ViewBag.PersonnelId })
 <table class="table">
     <thead>
         <tr>

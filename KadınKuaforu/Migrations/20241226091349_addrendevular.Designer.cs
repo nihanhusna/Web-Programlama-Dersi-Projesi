@@ -4,6 +4,7 @@ using KadınKuaforu.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KadınKuaforu.Migrations
 {
     [DbContext(typeof(KuaforDbContext))]
-    partial class KuaforDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241226091349_addrendevular")]
+    partial class addrendevular
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -246,25 +249,6 @@ namespace KadınKuaforu.Migrations
                     b.ToTable("Personnels");
                 });
 
-            modelBuilder.Entity("KadınKuaforu.Models.PersonnelShift", b =>
-                {
-                    b.Property<int>("PersonnelId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Day")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("End")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan>("Start")
-                        .HasColumnType("time");
-
-                    b.HasKey("PersonnelId");
-
-                    b.ToTable("PersonnelShifts");
-                });
-
             modelBuilder.Entity("KadınKuaforu.Models.Rank", b =>
                 {
                     b.Property<int>("Id")
@@ -481,17 +465,6 @@ namespace KadınKuaforu.Migrations
                     b.Navigation("Rank");
                 });
 
-            modelBuilder.Entity("KadınKuaforu.Models.PersonnelShift", b =>
-                {
-                    b.HasOne("KadınKuaforu.Models.Personnel", "Personnel")
-                        .WithOne("PersonnelShift")
-                        .HasForeignKey("KadınKuaforu.Models.PersonnelShift", "PersonnelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Personnel");
-                });
-
             modelBuilder.Entity("KadınKuaforu.Models.RankTask", b =>
                 {
                     b.HasOne("KadınKuaforu.Models.Rank", "Rank")
@@ -567,9 +540,6 @@ namespace KadınKuaforu.Migrations
                     b.Navigation("ExpertOfTasks");
 
                     b.Navigation("Meetings");
-
-                    b.Navigation("PersonnelShift")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.Rank", b =>

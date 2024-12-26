@@ -4,6 +4,7 @@ using KadınKuaforu.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KadınKuaforu.Migrations
 {
     [DbContext(typeof(KuaforDbContext))]
-    partial class KuaforDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241226090310_updategorevler")]
+    partial class updategorevler
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,47 +183,6 @@ namespace KadınKuaforu.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("KadınKuaforu.Models.Meeting", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Identity_UserID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<TimeSpan>("MeetFinish")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan>("MeetStart")
-                        .HasColumnType("time");
-
-                    b.Property<int>("PersonnelId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RankTaskId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Identity_UserID");
-
-                    b.HasIndex("PersonnelId");
-
-                    b.HasIndex("RankTaskId");
-
-                    b.ToTable("Meetings");
-                });
-
             modelBuilder.Entity("KadınKuaforu.Models.Personnel", b =>
                 {
                     b.Property<int>("Id")
@@ -244,25 +206,6 @@ namespace KadınKuaforu.Migrations
                     b.HasIndex("RankId");
 
                     b.ToTable("Personnels");
-                });
-
-            modelBuilder.Entity("KadınKuaforu.Models.PersonnelShift", b =>
-                {
-                    b.Property<int>("PersonnelId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Day")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("End")
-                        .HasColumnType("time");
-
-                    b.Property<TimeSpan>("Start")
-                        .HasColumnType("time");
-
-                    b.HasKey("PersonnelId");
-
-                    b.ToTable("PersonnelShifts");
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.Rank", b =>
@@ -435,33 +378,6 @@ namespace KadınKuaforu.Migrations
                     b.Navigation("RankTask");
                 });
 
-            modelBuilder.Entity("KadınKuaforu.Models.Meeting", b =>
-                {
-                    b.HasOne("KadınKuaforu.Models.Identity_User", "Identity_User")
-                        .WithMany("Meetings")
-                        .HasForeignKey("Identity_UserID")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("KadınKuaforu.Models.Personnel", "Personnel")
-                        .WithMany("Meetings")
-                        .HasForeignKey("PersonnelId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("KadınKuaforu.Models.RankTask", "RankTask")
-                        .WithMany("Meetings")
-                        .HasForeignKey("RankTaskId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Identity_User");
-
-                    b.Navigation("Personnel");
-
-                    b.Navigation("RankTask");
-                });
-
             modelBuilder.Entity("KadınKuaforu.Models.Personnel", b =>
                 {
                     b.HasOne("KadınKuaforu.Models.Identity_User", "Identity_User")
@@ -479,17 +395,6 @@ namespace KadınKuaforu.Migrations
                     b.Navigation("Identity_User");
 
                     b.Navigation("Rank");
-                });
-
-            modelBuilder.Entity("KadınKuaforu.Models.PersonnelShift", b =>
-                {
-                    b.HasOne("KadınKuaforu.Models.Personnel", "Personnel")
-                        .WithOne("PersonnelShift")
-                        .HasForeignKey("KadınKuaforu.Models.PersonnelShift", "PersonnelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Personnel");
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.RankTask", b =>
@@ -556,8 +461,6 @@ namespace KadınKuaforu.Migrations
 
             modelBuilder.Entity("KadınKuaforu.Models.Identity_User", b =>
                 {
-                    b.Navigation("Meetings");
-
                     b.Navigation("Personnel")
                         .IsRequired();
                 });
@@ -565,11 +468,6 @@ namespace KadınKuaforu.Migrations
             modelBuilder.Entity("KadınKuaforu.Models.Personnel", b =>
                 {
                     b.Navigation("ExpertOfTasks");
-
-                    b.Navigation("Meetings");
-
-                    b.Navigation("PersonnelShift")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("KadınKuaforu.Models.Rank", b =>
@@ -582,8 +480,6 @@ namespace KadınKuaforu.Migrations
             modelBuilder.Entity("KadınKuaforu.Models.RankTask", b =>
                 {
                     b.Navigation("ExpertOfTasks");
-
-                    b.Navigation("Meetings");
                 });
 #pragma warning restore 612, 618
         }

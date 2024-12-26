@@ -40,9 +40,11 @@
             // Form verilerini al
             let rankId = $('#rankid').val();
             let newTaskName = $('#newTaskName').val();
+            let newTaskPrice = $('#newTaskPrice').val();
+            let newTaskTime = $('#newTaskTime').val();
 
             // Basit bir doğrulama
-            if (!newTaskName.trim()) {
+            if (!newTaskName.trim()||!newTaskPrice||!newTaskTime) {
                 alert('Görev adı boş bırakılamaz.');
                 return;
             }
@@ -51,7 +53,7 @@
             $.ajax({
                 type: 'POST',
                 url: '/Panel/Company/AddNewTask', // Aksiyonun URL'sini kendi kontrolcünüzle değiştirin
-                data: { rankId: rankId, taskName: newTaskName },
+                data: { rankId: rankId, taskName: newTaskName, taskPrice:newTaskPrice, taskTime:newTaskTime },
                 success: function (response) {
                     if (response.success) {
                         alert('Görev başarıyla eklendi!');
@@ -82,9 +84,11 @@
             let taskId = $(this).data('taskid');
             // Görevin yeni adını al
             let taskName = $(`#taskName-${taskId}`).val();
+            let taskPrice = $(`#taskPrice-${taskId}`).val();
+            let taskTime = $(`#taskTime-${taskId}`).val();
         
             // Basit doğrulama
-            if (!taskName.trim()) {
+            if (!taskName.trim()||!taskPrice.trim()||!taskTime.trim()) {
                 alert('Görev adı boş bırakılamaz.');
                 return;
             }
@@ -93,7 +97,7 @@
             $.ajax({
                 type: 'POST',
                 url: '/Panel/Company/UpdateRankTask', // Doğru aksiyon URL'sini yazın
-                data: { taskId: taskId, taskName: taskName },
+                data: { taskId: taskId, taskName: taskName , taskPrice:taskPrice, taskTime:taskTime},
                 success: function (response) {
                     if (response.success) {
                         alert('Görev başarıyla güncellendi!');

@@ -1,0 +1,72 @@
+﻿@model CreateMeetingModel
+@{
+    ViewData["Title"] = "CreateMeeting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CreateMeeting</h1>
+@if (ViewData["MeetMsg"]!=null){
+    <div class="bg-info p-3 d-block w-100">
+        @ViewData["MeetMsg"]
+    </div>
+}
+<form method="post" asp-controller="Meetings" asp-action="CreateMeeting">
+    <input type="hidden" asp-for="PersonnelId" />
+    <input type="hidden" asp-for="RankTaskId" />
+    <input type="hidden" asp-for="Time" />
+    <input type="hidden" asp-for="Price" />
+    <input type="hidden" asp-for="RankTaskName" />
+    <input type="hidden" asp-for="PersonnelName" />
+    <input type="hidden" asp-for="PersonnelStart" />
+    <input type="hidden" asp-for="PersonnelEnd" />
+    <input type="hidden" asp-for="PersonnelOFFDay" />
+    <div>
+        <label asp-for="RankTaskName"></label>
+        <span>@Model.RankTaskName</span>
+        <span asp-validation-for="RankTaskName"></span>
+    </div>
+    <div>
+        <label asp-for="PersonnelName"></label>
+        <span>@Model.PersonnelName</span>
+        <span asp-validation-for="PersonnelName"></span>
+    </div>
+    <div>
+        <label asp-for="PersonnelStart"></label>
+        <span>@Model.PersonnelStart</span>
+        <span asp-validation-for="PersonnelStart"></span>
+    </div>
+    <div>
+        <label asp-for="PersonnelEnd"></label>
+        <span>@Model.PersonnelEnd</span>
+        <span asp-validation-for="PersonnelEnd"></span>
+    </div>
+    <div>
+        <label asp-for="PersonnelOFFDay"></label>
+        <span>@Model.PersonnelOFFDay</span>
+        <span asp-validation-for="PersonnelOFFDay"></span>
+    </div>
+    <div>
+        <label asp-for="Time"></label>
+        <span>@Model.Time</span>
+        <span asp-validation-for="Time"></span>
+    </div>
+    <div>
+        <label asp-for="Price"></label>
+        <span>@Model.Price</span>
+        <span asp-validation-for="Price"></span>
+    </div>
+    <div>
+        <label asp-for="Start"></label>
+        <input asp-for="Start" type="time" />
+        <span asp-validation-for="Start"></span>
+    </div>
+    <div>
+        <label asp-for="Date"></label>
+        <input asp-for="Date" type="datetime-local" />
+        <span asp-validation-for="Date"></span>
+    </div>
+    <div>
+        <button>Randevu Oluştur</button>
+    </div>
+</form>
+

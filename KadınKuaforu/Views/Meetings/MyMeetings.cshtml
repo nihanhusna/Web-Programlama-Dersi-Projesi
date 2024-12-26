@@ -1,0 +1,80 @@
+﻿@model List<Meeting>
+@{
+    ViewData["Title"] = "MyMeetings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>MyMeetings</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hizmet</th>
+            <th>Personel</th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Fiyat</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var meeting in Model){
+            <tr>
+                <td>@meeting.RankTask.Name</td>
+                <td>@meeting.Personnel.Identity_User.NameSurname</td>
+                <td>
+                    <input id="date-@meeting.Id" value="@meeting.Date.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" />
+                </td>
+                <td>
+                    <input id="start-@meeting.Id" value="@meeting.MeetStart" type="time" />
+                    <input disabled id="end-@meeting.Id" value="@meeting.MeetFinish" type="time" />
+                </td>
+                <td>@meeting.Price</td>
+                <td>
+                    <button class="updateMeetingBtn" data-id="@meeting.Id">Güncelle</button>
+                    <a asp-controller="Meetings" asp-action="DeleteMeeting" asp-route-id="@meeting.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(".updateMeetingBtn").on("click", function () {
+                // İlgili ID'yi al
+                let meetingId = $(this).data("id");
+
+                // Input değerlerini oku
+                let date = $(`#date-${meetingId}`).val();
+                let start = $(`#start-${meetingId}`).val();
+
+                // AJAX isteği
+                $.ajax({
+                    url: '/Meetings/UpdateMeeting',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        Id: meetingId,
+                        Date: date,
+                        MeetStart: start
+                    }),
+                    success: function (response) {
+                        if (response.success) {
+                            alert("Toplantı başarıyla güncellendi.");
+                            location.reload();
+                        } else {
+                            alert(response.message || "Bir hata oluştu.");
+                            location.reload();
+                        }
+                    },
+                    error: function () {
+                        alert("Bir hata oluştu.");
+                        location.reload();
+                    }
+                });
+            });
+        });
+    </script>
+
+}

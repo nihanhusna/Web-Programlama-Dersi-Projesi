@@ -17,7 +17,8 @@ namespace KadınKuaforu.Areas.Panel.Controllers
         private readonly IRankRepository _rankRepository;
         private readonly IRankTaskRepository _rankTaskRepository;
         private readonly IExpertOfTaskRepository _expertOfTaskRepository;
-        public UsersController(UserManager<Identity_User> userManager, RoleManager<Identity_Role> roleManager, IPersonnelRepository personnelRepository, IRankRepository rankRepository, IRankTaskRepository rankTaskRepository, IExpertOfTaskRepository expertOfTaskRepository)
+        private readonly IPersonnelShiftRepository _personnelShiftRepository;
+        public UsersController(UserManager<Identity_User> userManager, RoleManager<Identity_Role> roleManager, IPersonnelRepository personnelRepository, IRankRepository rankRepository, IRankTaskRepository rankTaskRepository, IExpertOfTaskRepository expertOfTaskRepository, IPersonnelShiftRepository personnelShiftRepository)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -25,6 +26,7 @@ namespace KadınKuaforu.Areas.Panel.Controllers
             _rankRepository = rankRepository;
             _rankTaskRepository = rankTaskRepository;
             _expertOfTaskRepository = expertOfTaskRepository;
+            _personnelShiftRepository = personnelShiftRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -155,6 +157,40 @@ namespace KadınKuaforu.Areas.Panel.Controllers
             }
             var personnel = _personnelRepository.GetById(personnelid);
             return RedirectToAction("User", "Users", new {area="Panel", userid=personnel.IdentityUserId});
+        }
+        [HttpPost]
+        public async Task<IActionResult> PersonnelShift(CreateShiftModel model)
+        {
+            var user = _personnelRepository.GetByIdWithProps(pi=>pi.Id==model.PersonnelId);
+            if (!ModelState.IsValid)
+            {
+                TempData["ShiftMsg"] = "Model doğrulanamadı, mesai eklenmedi";
+                return RedirectToAction("User", "Users", new { area = "Panel", userid = user.IdentityUserId });
+            }
+            var ps = _personnelShiftRepository.GetById(model.PersonnelId);
+            if(ps == null)
+            {
+                var shift = new PersonnelShift()
+                {
+                    PersonnelId = model.PersonnelId,
+                    Start = model.Start,
+                    End = model.End,
+                    Day = (DayOfWeek)Enum.ToObject(typeof(DayOfWeek), model.selectedDay)
+                };
+                _personnelShiftRepository.Add(shift);
+                _personnelShiftRepository.Save();
+                TempData["ShiftMsg"] = "Mesai eklendi";
+            }
+            else
+            {
+                ps.Start = model.Start;
+                ps.End = model.End;
+                ps.Day = (DayOfWeek)Enum.ToObject(typeof(DayOfWeek), model.selectedDay);
+                _personnelShiftRepository.Update(ps);
+                _personnelShiftRepository.Save();
+                TempData["ShiftMsg"] = "Mesai güncellendi";
+            }
+            return RedirectToAction("User", "Users", new { area = "Panel", userid = user.IdentityUserId });
         }
     }
 }

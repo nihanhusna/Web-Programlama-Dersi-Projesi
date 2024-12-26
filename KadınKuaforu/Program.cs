@@ -14,6 +14,8 @@ builder.Services.AddScoped<IExpertOfTaskRepository, ExpertOfTaskRepository>();
 builder.Services.AddScoped<IPersonnelRepository, PersonnelRepository>();
 builder.Services.AddScoped<IRankRepository, RankRepository>();
 builder.Services.AddScoped<IRankTaskRepository, RankTaskRepository>();
+builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
+builder.Services.AddScoped<IPersonnelShiftRepository, PersonnelShiftRepository>();
 
 builder.Services.AddDbContext<KuaforDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

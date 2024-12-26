@@ -1,0 +1,24 @@
+﻿@using KadınKuaforu.Areas.Panel.Models
+@model CreateShiftModel
+
+<form asp-area="Panel" asp-controller="Users" asp-action="PersonnelShift">
+    <input type="hidden" asp-for="PersonnelId"/>
+    <div>
+        <label asp-for="Start"></label>
+        <input asp-for="Start" type="time" />
+        <span asp-validation-for="Start"></span>
+    </div>
+    <div>
+        <label asp-for="End"></label>
+        <input asp-for="End" type="time" />
+        <span asp-validation-for="End"></span>
+    </div>
+    <div>
+        <label asp-for="selectedDay"></label>
+        <select asp-for="selectedDay" asp-items="@Model.Days"><option> -- İzin Günü Seç -- </option></select>
+        <span asp-validation-for="selectedDay"></span>
+    </div>
+    <div>
+        <button type="submit">Kaydet</button>
+    </div>
+</form>

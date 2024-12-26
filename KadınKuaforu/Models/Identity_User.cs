@@ -12,6 +12,7 @@ namespace KadınKuaforu.Models
         [Required(ErrorMessage = "Hakkında girmelisiniz")]
         public string About { get; set; }
         public Personnel Personnel { get; set; }
+        public ICollection<Meeting> Meetings { get; set; }
 
     }
 }

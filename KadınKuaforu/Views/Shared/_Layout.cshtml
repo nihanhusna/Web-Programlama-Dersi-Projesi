@@ -30,6 +30,16 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Randevu al
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="Meetings" asp-action="Index" asp-route-name="KuaforElemani">Kuaför Randevusu</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Meetings" asp-action="Index" asp-route-name="GuzellikElemani">Güzellik Randevusu</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Meetings" asp-action="Index" asp-route-name="BakimElemani">Bakım Randevusu</a></li>
+                                </ul>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Sign" asp-action="Out">Çıkış yap</a>
                             </li>

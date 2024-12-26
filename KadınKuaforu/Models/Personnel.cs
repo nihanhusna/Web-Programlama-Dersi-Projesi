@@ -17,6 +17,8 @@ namespace KadınKuaforu.Models
         public int RankId { get; set; }
         [ForeignKey(nameof(RankId))]   
         public Rank Rank { get; set; }
+        public PersonnelShift PersonnelShift { get; set; }
         public ICollection<ExpertOfTask> ExpertOfTasks { get; set; }
+        public ICollection<Meeting> Meetings { get; set; }
     }
 }

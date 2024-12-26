@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KadınKuaforu.DataAccess
 {
-    public class RankRepository : Repository<Rank>, IRankRepository
+    public class PersonnelShiftRepository : Repository<PersonnelShift>, IPersonnelShiftRepository
     {
         private readonly KuaforDbContext _dbContext;
-        private readonly DbSet<Rank> _dbset;
-        public RankRepository(KuaforDbContext dbContext) : base(dbContext)
+        private readonly DbSet<PersonnelShift> _dbset;
+        public PersonnelShiftRepository(KuaforDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
-            _dbset = _dbContext.Set<Rank>();
+            _dbset = _dbContext.Set<PersonnelShift>();
         }
     }
 }

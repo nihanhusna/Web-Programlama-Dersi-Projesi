@@ -92,7 +92,7 @@ namespace KadınKuaforu.Areas.Panel.Controllers
             return ViewComponent("GetRanksTasks", new { rankid = rank });
         }
         [HttpPost]
-        public IActionResult AddNewTask(int rankId, string taskName)
+        public IActionResult AddNewTask(int rankId, string taskName, int taskPrice, int taskTime)
         {
             try
             {
@@ -100,7 +100,9 @@ namespace KadınKuaforu.Areas.Panel.Controllers
                 var newTask = new RankTask
                 {
                     RankId = rankId,
-                    Name = taskName
+                    Name = taskName,
+                    Price = taskPrice,
+                    Time = taskTime
                 };
                 _rankTaskRepository.Add(newTask);
                 _rankTaskRepository.Save();
@@ -113,7 +115,7 @@ namespace KadınKuaforu.Areas.Panel.Controllers
             }
         }
         [HttpPost]
-        public IActionResult UpdateRankTask(int taskId, string taskName)
+        public IActionResult UpdateRankTask(int taskId, string taskName, int taskPrice, int taskTime)
         {
             try
             {
@@ -126,6 +128,8 @@ namespace KadınKuaforu.Areas.Panel.Controllers
 
                 // Görevi güncelle
                 task.Name = taskName;
+                task.Price = taskPrice;
+                task.Time = taskTime;
                 _rankTaskRepository.Update(task);
                 _rankTaskRepository.Save();
 

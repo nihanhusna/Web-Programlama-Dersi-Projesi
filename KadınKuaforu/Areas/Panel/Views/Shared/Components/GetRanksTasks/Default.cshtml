@@ -3,13 +3,17 @@
 <form>
     <label style="font-weight:600;">Yeni Görev</label>
     <input type="hidden" value="@ViewBag.Rankid" id="rankid" />
-    <input type="text" id="newTaskName" class="form-control" />
+    <input type="text" id="newTaskName" class="form-control" placeholder="Görev"/>
+    <input type="number" id="newTaskPrice" class="form-control"  placeholder="Fiyat"/>
+    <input type="number" id="newTaskTime" class="form-control" placeholder="Dakika"/>
     <button class="btn btn-success" type="button" id="addNewTask">Ekle</button>
 </form>
 <table class="table">
     <thead>
         <tr>
             <th>Görev</th>
+            <th>TL</th>
+            <th>Dakika</th>
             <th>İşlemler</th>
         </tr>
     </thead>
@@ -17,6 +21,8 @@
         @foreach(var task in Model){
             <tr>
                 <td><input value="@task.Name" class="form-control" id="taskName-@task.Id" /></td>
+                <td><input value="@task.Price" class="form-control" id="taskPrice-@task.Id" /></td>
+                <td><input value="@task.Time" class="form-control" id="taskTime-@task.Id" /></td>
                 <td>
                     <button type="button" class="btn btn-primary updateTaskBtn" data-taskid="@task.Id">Güncelle</button>
                     <button class="btn btn-danger deleteTaskBtn" data-taskid="@task.Id">Sil</button>

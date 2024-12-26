@@ -1,0 +1,34 @@
+﻿@model List<RankTask>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Randevu Sistemi</h1>
+<a asp-controller="Meetings" asp-action="MyMeetings">Randevularım</a>
+<div class="d-block w-100 bg-secondary py-2 px-4 text-center">
+    Hizmeti uzman olarak veren personellerimiz için fiyatlar 20% fazladır ve işlem süresi 25% kısadır.
+</div>
+@if(ViewBag.TaskID!=null){
+    @await Component.InvokeAsync("GetPersonnelsByTask",new{taskid = ViewBag.TaskID, rankname = ViewBag.Name})
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hizmet</th>
+            <th>TL</th>
+            <th>Dk</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var task in Model){
+            <tr>
+                <td>@task.Name</td>
+                <td>@task.Price</td>
+                <td>@task.Time</td>
+                <td><a asp-controller="Meetings" asp-action="PersonnelsByTask" asp-route-id="@task.Id" asp-route-name="@ViewBag.Name">Seç</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

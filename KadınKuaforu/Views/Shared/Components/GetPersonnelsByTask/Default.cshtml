@@ -1,0 +1,28 @@
+﻿@model List<MeetingPersonnelModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Personel</th>
+            <th>Uzman</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var personnel in Model){
+            <tr>
+                <td>@personnel.PersonnelName</td>
+                <td>@if (personnel.isExpert)
+                    {
+                        <strong><i>Evet</i></strong>
+                    }else{
+                        <i>Hayır</i>
+                    }
+                </td>
+                <td>
+                    <a asp-controller="Meetings" asp-action="CreateMeeting" asp-route-taskid="@personnel.RankTaskID" asp-route-personnelid="@personnel.PersonnelID">Seç</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

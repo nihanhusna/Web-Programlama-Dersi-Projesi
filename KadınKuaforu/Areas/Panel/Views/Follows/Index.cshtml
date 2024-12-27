@@ -1,0 +1,91 @@
+﻿@model List<Meeting>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Randevu Takip</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Hizmet</th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Durum</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var meet in Model){
+            <tr>
+                <td>@meet.RankTask.Name</td>
+                <td>@meet.Date.ToShortDateString()</td>
+                <td>@meet.MeetStart - @meet.MeetFinish</td>
+                <td>@if (meet.IsPassive == false)
+                    {
+                        <span>Aktif</span>
+                    }else{<span>Pasif</span>}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#seeMore-@meet.Id">
+                        Görüntüle
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@foreach(var meet in Model){
+    <!-- Modal -->
+    <div class="modal fade" id="seeMore-@meet.Id" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">@meet.Date.ToShortDateString() - @meet.MeetStart Randevusu</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col text-end"><b>Randevu Tarihi:</b></div>
+                        <div class="col">@meet.Date.ToShortDateString()</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end"><b>Randevu Saati:</b></div>
+                        <div class="col">@meet.MeetStart</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end"><b>Tahmini Randevu Bitiş Saati:</b></div>
+                        <div class="col">@meet.MeetFinish</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end"><b>Alınan Hizmet:</b></div>
+                        <div class="col">@meet.RankTask.Name</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end"><b>Hizmetin Fiyatı:</b></div>
+                        <div class="col">@meet.Price</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end"><b>Hizmeti Veren:</b></div>
+                        <div class="col">@meet.Personnel.Identity_User.NameSurname</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end"><b>Hizmeti Alan:</b></div>
+                        <div class="col">@meet.Identity_User.NameSurname</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-end"><b>Hizmeti Alan İletişim:</b></div>
+                        <div class="col">@meet.Identity_User.Email</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    @if(meet.IsPassive==false && meet.Date>DateTime.Now){
+                        <a asp-area="Panel" asp-controller="Follows" asp-action="Passive" asp-route-id="@meet.Id" class="btn btn-danger">İptal et</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}

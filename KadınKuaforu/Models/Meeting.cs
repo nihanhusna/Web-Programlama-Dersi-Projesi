@@ -20,5 +20,6 @@ namespace KadınKuaforu.Models
         public TimeSpan MeetStart { get; set; }
         public TimeSpan MeetFinish { get; set; }
         public int Price { get; set; }
+        public bool IsPassive { get; set; } = false;
     }
 }

@@ -1,0 +1,62 @@
+﻿@using KadınKuaforu.Areas.Panel.Models
+@model FollowCompanyModel
+@{
+    ViewData["Title"] = "Personnels";
+    Layout = "~/Areas/Panel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kuaför Takip Sistemi</h1>
+
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En çok tercih edilen personel</div>
+        <div class="d-block">@Model.MostBookedPersonnelName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.MostBookedPersonnelAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.MostBookedPersonnelPrice</div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En az tercih edilen personel</div>
+        <div class="d-block">@Model.LeastBookedPersonnelName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.LeastBookedPersonnelAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.LeastBookedPersonnelPrice</div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En çok kazandıran personel</div>
+        <div class="d-block">@Model.MostProfitablePersonnelName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.MostProfitablePersonnelAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.MostProfitablePersonnelPrice</div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En az kazandıran personel</div>
+        <div class="d-block">@Model.LeastProfitablePersonnelName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.LeastProfitablePersonnelAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.LeastProfitablePersonnelPrice</div>
+    </div>
+
+
+
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En çok tercih edilen hizmet</div></b>
+        <div class="d-block">@Model.MostBookedTaskName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.MostBookedTaskAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.MostBookedTaskPrice</div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En az tercih edilen hizmet</div>
+        <div class="d-block">@Model.LeastBookedTaskName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.LeastBookedTaskAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.LeastBookedTaskPrice</div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En çok kazandıran hizmet</div>
+        <div class="d-block">@Model.MostProfitableTaskName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.MostProfitableTaskAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.MostProfitableTaskPrice</div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12 card-follow-company">
+        <div class="d-block title">En az kazandıran hizmet</div>
+        <div class="d-block">@Model.LeastProfitableTaskName</div>
+        <div class="d-block"><b>Toplam Randevu : </b>@Model.LeastProfitableTaskAppointment</div>
+        <div class="d-block"><b>Toplam Kazanç : </b>@Model.LeastProfitableTaskPrice</div>
+    </div>
+</div>

@@ -20,3 +20,52 @@ html {
 body {
   margin-bottom: 60px;
 }
+nav{
+    background:#46084b;
+}
+footer {
+    background: #feebff;
+}
+h1 {
+    font-size: 2em;
+    border-radius: 25px;
+    border-bottom: 1px solid #46084b;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    text-align: center;
+}
+.card-follow-company {
+    border: 1px solid #46084b;
+    margin: 1em;
+    padding: 2em;
+    border-radius: 25px;
+    background: #feebff;
+}
+.card-follow-company .title{
+    font-weight:700;
+    font-size:1.2em;
+    border-bottom:1px solid #46084b;
+    margin-bottom:.7em;
+}
+form label{
+    display:block;
+    font-weight:600;
+    margin-bottom:.3em;
+}
+form input, form select, form textarea{
+    width:100%;
+    margin-bottom:1em;
+    padding:.3em;
+    border:1px solid #46084b;
+    border-radius:10px;
+}
+form button{
+    margin-left:30%;
+}
+.company-tasks .row {
+    border: 1px solid #46084b;
+    align-items:center;
+    margin: 1em 0;
+    padding:1em;
+    border-radius:10px;
+}

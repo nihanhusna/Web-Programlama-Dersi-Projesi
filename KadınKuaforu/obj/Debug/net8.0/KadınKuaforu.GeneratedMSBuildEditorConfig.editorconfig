@@ -36,6 +36,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcQ29tcGFueVxSYW5rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Areas/Panel/Views/Follows/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcRm9sbG93c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Areas/Panel/Views/Follows/Personnels.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcRm9sbG93c1xQZXJzb25uZWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Areas/Panel/Views/Shared/Components/GetRankPersonnels/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUGFuZWxcVmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2V0UmFua1BlcnNvbm5lbHNcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -76,10 +84,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Views/Meetings/CreateMeeting.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVldGluZ3NcQ3JlYXRlTWVldGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +94,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Views/Meetings/MyMeetings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVldGluZ3NcTXlNZWV0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Views/Personnels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyc29ubmVsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/me_ct/OneDrive/Masaüstü/PROJELER/Nihan Hüsna Kılıç Beşik Y245060024/KadınKuaforu/KadınKuaforu/Views/Shared/Components/GetPersonnelsByTask/Default.cshtml]

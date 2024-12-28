@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddHttpClient();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IExpertOfTaskRepository, ExpertOfTaskRepository>();
 builder.Services.AddScoped<IPersonnelRepository, PersonnelRepository>();
@@ -16,6 +16,7 @@ builder.Services.AddScoped<IRankRepository, RankRepository>();
 builder.Services.AddScoped<IRankTaskRepository, RankTaskRepository>();
 builder.Services.AddScoped<IMeetingRepository, MeetingRepository>();
 builder.Services.AddScoped<IPersonnelShiftRepository, PersonnelShiftRepository>();
+builder.Services.AddScoped<IGeneratorRepository, GeneratorRepository>();
 
 builder.Services.AddDbContext<KuaforDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

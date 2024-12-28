@@ -1,6 +1,7 @@
 ﻿using KadınKuaforu.Areas.Panel.Models;
 using KadınKuaforu.DataAccess;
 using KadınKuaforu.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KadınKuaforu.Areas.Panel.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Panel")]
     public class UsersController : Controller
     {

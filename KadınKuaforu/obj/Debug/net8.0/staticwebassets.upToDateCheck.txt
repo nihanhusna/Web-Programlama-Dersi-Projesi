@@ -1,5 +1,15 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\img\sac-dalgali.png
+wwwroot\img\sac-duz.png
+wwwroot\img\sac-kivircik.png
+wwwroot\img\uzunluk-omuzalti.png
+wwwroot\img\uzunluk-omuzhizasi.png
+wwwroot\img\uzunluk-omuzustu.png
+wwwroot\img\yuz-elmas.png
+wwwroot\img\yuz-kalp.png
+wwwroot\img\yuz-oval.png
+wwwroot\img\yuz-yuvarlak.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

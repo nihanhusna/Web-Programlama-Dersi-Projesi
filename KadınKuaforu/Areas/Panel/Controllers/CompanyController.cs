@@ -1,5 +1,6 @@
 ﻿using KadınKuaforu.DataAccess;
 using KadınKuaforu.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace KadınKuaforu.Areas.Panel.Controllers
 {
+    [Authorize(Roles ="Admin")]
     [Area("Panel")]
     public class CompanyController : Controller
     {

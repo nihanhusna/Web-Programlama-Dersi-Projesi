@@ -54,6 +54,12 @@ namespace KadınKuaforu.DataAccess
             modelBuilder.Entity<PersonnelShift>()
             .HasKey(ps => ps.PersonnelId);
 
+            modelBuilder.Entity<Generator>()
+              .HasOne(e => e.Identity_User)
+              .WithMany(r => r.Generators)
+              .HasForeignKey(e => e.IdentityUserId)
+              .OnDelete(DeleteBehavior.NoAction);
+
         }
         public DbSet<Company> Companies { get; set; }
         public DbSet<ExpertOfTask> ExpertOfTasks { get; set; }
@@ -62,5 +68,6 @@ namespace KadınKuaforu.DataAccess
         public DbSet<RankTask> RankTasks { get; set; }
         public DbSet<Meeting> Meetings { get; set; }
         public DbSet<PersonnelShift> PersonnelShifts { get; set; }
+        public DbSet<Generator> Generators { get; set; }
     }
 }

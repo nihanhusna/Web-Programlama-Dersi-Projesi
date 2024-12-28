@@ -26,13 +26,19 @@
                     <input id="date-@meeting.Id" value="@meeting.Date.ToString("yyyy-MM-ddTHH:mm")" type="datetime-local" />
                 </td>
                 <td>
-                    <input id="start-@meeting.Id" value="@meeting.MeetStart" type="time" />
+                    @{
+                        var isPassive = meeting.IsPassive == false || meeting.Date.Date <= DateTime.Now ? "disabled" : "";
+                    }
+                    <input @isPassive id="start-@meeting.Id" value="@meeting.MeetStart" type="time" />
                     <input disabled id="end-@meeting.Id" value="@meeting.MeetFinish" type="time" />
                 </td>
                 <td>@meeting.Price</td>
                 <td>
-                    <button class="updateMeetingBtn" data-id="@meeting.Id">Güncelle</button>
-                    <a asp-controller="Meetings" asp-action="DeleteMeeting" asp-route-id="@meeting.Id">Sil</a>
+                    <button @isPassive class="updateMeetingBtn" data-id="@meeting.Id">Güncelle</button>
+                    @if (meeting.IsPassive != false && meeting.Date.Date > DateTime.Now)
+                    {
+                        <a asp-controller="Meetings" asp-action="DeleteMeeting" asp-route-id="@meeting.Id">Sil</a>
+                    }
                 </td>
             </tr>
         }

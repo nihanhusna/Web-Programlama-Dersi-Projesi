@@ -13,6 +13,7 @@ namespace KadınKuaforu.Models
         public string About { get; set; }
         public Personnel Personnel { get; set; }
         public ICollection<Meeting> Meetings { get; set; }
+        public ICollection<Generator> Generators { get; set; }
 
     }
 }

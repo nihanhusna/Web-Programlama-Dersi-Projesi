@@ -1,11 +1,13 @@
 ﻿using KadınKuaforu.DataAccess;
 using KadınKuaforu.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace KadınKuaforu.Controllers
 {
+    [Authorize]
     public class MeetingsController : Controller
     {
         private readonly IRankTaskRepository _taskRepository;

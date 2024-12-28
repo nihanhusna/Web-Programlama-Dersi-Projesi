@@ -1,0 +1,86 @@
+﻿@model CreateRequestModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Sorgu Oluştur</h1>
+<div id="question-1" class="question">
+    <h3>Lütfen yüz tipinizi seçiniz</h3>
+    <div class="options">
+        <img src="~/img/yuz-elmas.png" alt="elmasyuz" data-answer="Elmas" onclick="selectAnswer(1, 'Elmas')">
+        <img src="~/img/yuz-kalp.png" alt="kalpyuz" data-answer="Kalp" onclick="selectAnswer(1, 'Kalp')">
+        <img src="~/img/yuz-oval.png" alt="ovalyuz" data-answer="Oval" onclick="selectAnswer(1, 'Oval')">
+        <img src="~/img/yuz-yuvarlak.png" alt="yuvarlakyuz" data-answer="Yuvarlak" onclick="selectAnswer(1, 'Yuvarlak')">
+    </div>
+</div>
+
+<div id="question-2" class="question" style="display:none;">
+    <h3>Lütfen saç tipinizi seçiniz</h3>
+    <div class="options">
+        <img src="~/img/sac-dalgali.png" alt="dalgalisac" data-answer="Dalgalı" onclick="selectAnswer(2, 'Dalgalı')">
+        <img src="~/img/sac-kivircik.png" alt="kivirciksac" data-answer="Kıvırcık" onclick="selectAnswer(2, 'Kıvırcık')">
+        <img src="~/img/sac-duz.png" alt="duzsac" data-answer="Düz" onclick="selectAnswer(2, 'Düz')">
+    </div>
+    <button type="button" class="btn btn-danger" onclick="goBack()">Geri</button>
+</div>
+
+<div id="question-3" class="question" style="display:none;">
+    <h3>Lütfen saç uzunluğunuzu seçiniz</h3>
+    <div class="options">
+        <img src="~/img/uzunluk-omuzustu.png" alt="omuzustuuzunluk" data-answer="Omuz Üstü" onclick="selectAnswer(3, 'Omuz Üstü')">
+        <img src="~/img/uzunluk-omuzhizasi.png" alt="omuzhizasiuzunluk" data-answer="Omuz Hizası" onclick="selectAnswer(3, 'Omuz Hizası')">
+        <img src="~/img/uzunluk-omuzalti.png" alt="omuzaltiuzunluk" data-answer="Omuz Altı" onclick="selectAnswer(3, 'Omuz Altı')">
+    </div>
+    <button type="button" class="btn btn-danger" onclick="goBack()">Geri</button>
+    <button type="button" class="btn btn-primary" onclick="submitAnswers()">Tamamla</button>
+</div>
+
+@section Scripts{
+    <script>
+        const answers = {};
+        let currentQuestion = 1;
+
+        function selectAnswer(questionId, answer) {
+            // Cevabı kaydet
+            answers[`answer${questionId}`] = answer;
+
+            if(questionId!=3){
+                // Bir sonraki soruya geç
+                const nextQuestionId = questionId + 1;
+                document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+
+                if (document.getElementById('question-' + nextQuestionId)) {
+                    document.getElementById('question-' + nextQuestionId).style.display = 'block';
+                    currentQuestion = nextQuestionId;
+                } else {
+                    console.log('Tüm cevaplar seçildi:', answers);
+                }
+            }
+        }
+        function goBack() {
+            if (currentQuestion > 1) {
+                document.querySelector(`#question-${currentQuestion}`).style.display = 'none';
+                currentQuestion -= 1;
+                document.querySelector(`#question-${currentQuestion}`).style.display = 'block';
+            }
+        }
+        function submitAnswers() {
+            console.log('Gönderilecek cevaplar:', answers);
+
+            $.ajax({
+                url: '/Generator/Index',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(answers),
+                success: function (response) {
+                    alert('Cevaplar başarıyla gönderildi!');
+                },
+                error: function (error) {
+                    console.error('Hata:', error);
+                    alert('Cevaplar gönderilemedi.');
+                }
+            });
+        }
+
+    </script>
+}

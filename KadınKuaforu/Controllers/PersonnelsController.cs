@@ -1,10 +1,12 @@
 ﻿using KadınKuaforu.DataAccess;
 using KadınKuaforu.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KadınKuaforu.Controllers
 {
+    [Authorize(Roles ="BakimElemani,GuzellikElemani,KuaforElemani")]
     public class PersonnelsController : Controller
     {
         private readonly IMeetingRepository _meetingRepository;

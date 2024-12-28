@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "ContainingType": "Kad\u0131nKuaforu.Controllers.KadinKuaforuController",
+    "Method": "AllGenerators",
+    "RelativePath": "api/KadinKuaforu/AllGenerators",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kad\u0131nKuaforu.Controllers.KadinKuaforuController",
+    "Method": "AllGenerators",
+    "RelativePath": "api/KadinKuaforu/AllGenerators/{identityUserId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "identityUserId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Kad\u0131nKuaforu.Controllers.KadinKuaforuController",
+    "Method": "CreateGenerator",
+    "RelativePath": "api/KadinKuaforu/CreateGenerator",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Kad\u0131nKuaforu.Models.CreateGeneratorModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

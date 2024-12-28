@@ -1,10 +1,12 @@
 ﻿using KadınKuaforu.Areas.Panel.Models;
 using KadınKuaforu.DataAccess;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace KadınKuaforu.Areas.Panel.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Panel")]
     public class FollowsController : Controller
     {

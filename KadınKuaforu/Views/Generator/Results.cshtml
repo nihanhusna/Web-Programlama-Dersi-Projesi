@@ -1,0 +1,17 @@
+﻿@model List<Generator>
+@{
+    ViewData["Title"] = "Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yapay Zeka Sorgularınız</h1>
+@foreach(var result in Model){
+    <details>
+        <summary>@result.Time</summary>
+        <div>
+            <strong>@result.Request</strong>
+            <p>@Html.Raw(result.Response)</p>
+        </div>
+    </details>
+}
+

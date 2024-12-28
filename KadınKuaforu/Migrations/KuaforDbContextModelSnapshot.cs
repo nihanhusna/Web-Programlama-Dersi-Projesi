@@ -80,6 +80,36 @@ namespace KadınKuaforu.Migrations
                     b.ToTable("ExpertOfTasks");
                 });
 
+            modelBuilder.Entity("KadınKuaforu.Models.Generator", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("IdentityUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Request")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Response")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdentityUserId");
+
+                    b.ToTable("Generators");
+                });
+
             modelBuilder.Entity("KadınKuaforu.Models.Identity_Role", b =>
                 {
                     b.Property<string>("Id")
@@ -438,6 +468,17 @@ namespace KadınKuaforu.Migrations
                     b.Navigation("RankTask");
                 });
 
+            modelBuilder.Entity("KadınKuaforu.Models.Generator", b =>
+                {
+                    b.HasOne("KadınKuaforu.Models.Identity_User", "Identity_User")
+                        .WithMany("Generators")
+                        .HasForeignKey("IdentityUserId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Identity_User");
+                });
+
             modelBuilder.Entity("KadınKuaforu.Models.Meeting", b =>
                 {
                     b.HasOne("KadınKuaforu.Models.Identity_User", "Identity_User")
@@ -559,6 +600,8 @@ namespace KadınKuaforu.Migrations
 
             modelBuilder.Entity("KadınKuaforu.Models.Identity_User", b =>
                 {
+                    b.Navigation("Generators");
+
                     b.Navigation("Meetings");
 
                     b.Navigation("Personnel")
